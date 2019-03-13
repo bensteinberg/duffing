@@ -12,3 +12,9 @@ python ./duffing.py | gnuplot -p -e 'plot "/dev/stdin" with dots'
 
 The ChucK player is not working yet, hence the WAV file output in
 duffing.py.
+
+Useful sources have included
+
+- https://en.wikipedia.org/wiki/Duffing_equation
+- https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods
+- https://www.youtube.com/watch?v=TjZgQa2kec0
