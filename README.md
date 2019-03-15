@@ -18,3 +18,9 @@ Useful sources have included
 - https://en.wikipedia.org/wiki/Duffing_equation
 - https://en.wikipedia.org/wiki/Runge%E2%80%93Kutta_methods
 - https://www.youtube.com/watch?v=TjZgQa2kec0
+
+C code
+------
+At the moment, compile like this:
+
+    gcc solve.c duffing.c rk4.c
