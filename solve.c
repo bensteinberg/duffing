@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 #include "equation.h"
 
 /*
@@ -8,7 +7,7 @@
 
 int main()
 {
-  // initial conditions
+  // initial conditions: time, position, and velocity
   struct moment now = {0.0, 0.0, 1.0};
 
   double tt = 10.0; // total time
