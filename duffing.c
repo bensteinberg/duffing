@@ -2,23 +2,24 @@
 #include "equation.h"
 
 /*
-    the duffing equation:
+    the Duffing equation:
 
-    xdotdot + delta xdot + alpha x + beta x^3 = gamma cos (omega t)
+    x'' + delta x' + alpha x + beta x^3 = gamma cos (omega t)
 
-    decomposes to two first-order differential equations by setting v = xdot:
+    decomposes to two first-order differential equations by setting v = x':
 
-    vdot = xdotdot = gamma cos (omega t) - delta v - alpha x - beta x^3
-    xdot = v = f1(t, x, v)
+    v' = x'' = gamma cos (omega t) - delta v - alpha x - beta x^3
+    x' = v
 */
 
-double alpha = 1.0;   // 
-double beta  = 5.0;   //
-double delta = 0.02;  //
-double g = 8.0;       //
-double omega = 0.5;   //
+double alpha = 1.0;   // stiffness
+double beta  = 5.0;   // non-linearity
+double delta = 0.02;  // damping
+double g = 8.0;       // amplitude
+double omega = 0.5;   // frequency
 
-double h = 1.0 / 48000.0;  // step size
+// step size -- this might reasonably go in e.g. rk4.c, but is convenient here
+double h = 1.0 / 48000.0;
 
 double f1(double t, double x, double v)
 {
@@ -30,7 +31,7 @@ double f2(double t, double x, double v)
   extern double alpha;
   extern double beta;
   extern double delta;
-  extern double g;
+  extern double g;      // can't use gamma, because it's in math.h
   extern double omega;
   
   return g * cos(omega * t) - delta * v - alpha * x - beta * pow(x, 3);
